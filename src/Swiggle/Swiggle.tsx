@@ -37,19 +37,17 @@ const Swiggle = ({
         style={[
           styles.container,
           isToggled ? styles.containerEnabled : styles.containerDisabled,
-          isToggled &&
-            enabledBackgroundColor && {
-              backgroundColor: enabledBackgroundColor,
-            },
+          isToggled && enabledBackgroundColor
+            ? { backgroundColor: enabledBackgroundColor }
+            : null,
         ]}
       >
         <Animated.View
           style={[
             styles.innerCircle,
-            isToggled &&
-              innerCircleEnabledColor && {
-                backgroundColor: innerCircleEnabledColor,
-              },
+            innerCircleEnabledColor
+              ? { backgroundColor: innerCircleEnabledColor }
+              : null,
             { transform: [{ translateX: innerCircleTranslateX }] },
           ]}
         />
