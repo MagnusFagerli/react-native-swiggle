@@ -1,6 +1,8 @@
 # react-native-swiggle
 
-Toggle/Switch component for React Native
+Should it be a toggle? Should it be a switch? No, it should be a swiggle!
+
+This is a Toggle component for React Native.
 
 ## Installation
 
@@ -11,11 +13,20 @@ npm install react-native-swiggle
 ## Usage
 
 ```js
-import { multiply } from 'react-native-swiggle';
+import Swiggle from 'react-native-swiggle';
 
-// ...
+export default function App() {
+  const [exampleValue, setExampleValue] = useState(true);
 
-const result = await multiply(3, 7);
+  const handleToggle = () => {
+    setExampleValue((prevValue) => !prevValue);
+  };
+  return (
+    <View style={styles.container}>
+      <Swiggle isActive={exampleValue} onPress={handleToggle} />
+    </View>
+  );
+}
 ```
 
 ## Contributing
@@ -25,7 +36,3 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 ## License
 
 MIT
-
----
-
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
