@@ -1,18 +1,16 @@
-import * as React from 'react';
-
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-swiggle';
+import React, { useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { Swiggle } from 'react-native-swiggle';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [exampleValue, setExampleValue] = useState(true);
 
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
+  const handleToggle = () => {
+    setExampleValue((prevValue) => !prevValue);
+  };
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Swiggle isActive={exampleValue} onPress={handleToggle} />
     </View>
   );
 }

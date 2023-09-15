@@ -1,3 +1,4 @@
-export function multiply(a: number, b: number): Promise<number> {
-  return Promise.resolve(a * b);
-}
+import Swiggle from './Swiggle/Swiggle';
+import { SwiggleProps } from './Swiggle/Swiggle.types';
+
+export { Swiggle, SwiggleProps };
