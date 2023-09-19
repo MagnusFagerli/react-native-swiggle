@@ -8,8 +8,6 @@ const styles = StyleSheet.create({
   },
   container: {
     borderRadius: 30,
-    width: 50,
-    height: 25,
     justifyContent: 'center',
   },
   containerDisabled: {
@@ -21,9 +19,7 @@ const styles = StyleSheet.create({
   innerCircle: {
     margin: 5,
     borderRadius: 30,
-    width: 16,
-    height: 16,
-    backgroundColor: '#1a1a1a',
+    backgroundColor: '#FFFFFF',
   },
 });
 

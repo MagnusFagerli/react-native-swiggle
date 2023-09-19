@@ -19,13 +19,13 @@ import Swiggle from 'react-native-swiggle';
 export default function App() {
   const [exampleValue, setExampleValue] = useState(true);
 
-  const handleToggle = () => {
+  const handleSwiggle = () => {
     setExampleValue((prevValue) => !prevValue);
   };
 
   return (
     <View style={styles.container}>
-      <Swiggle isActive={exampleValue} onPress={handleToggle} />
+      <Swiggle isActive={exampleValue} onPress={handleSwiggle} />
     </View>
   );
 }
@@ -33,7 +33,7 @@ export default function App() {
 
 ## Usage with optional props
 
-Default colors are iOS green for enabled background color, and black for innerCircle color.
+Default colors are iOS green for enabled background color, and white for innerCircle color.
 
 ```js
 import Swiggle from 'react-native-swiggle';
@@ -41,7 +41,7 @@ import Swiggle from 'react-native-swiggle';
 export default function App() {
   const [exampleValue, setExampleValue] = useState(true);
 
-  const handleToggle = () => {
+  const handleSwiggle = () => {
     setExampleValue((prevValue) => !prevValue);
   };
 
@@ -49,9 +49,13 @@ export default function App() {
     <View style={styles.container}>
       <Swiggle
         isActive={exampleValue}
-        onPress={handleToggle}
+        onPress={handleSwiggle}
         enabledBackgroundColor="blue"
         innerCircleEnabledColor="white"
+        containerHeight={50}
+        containerWidth={100}
+        innerCircleHeight={40}
+        innerCircleWidth={40}
       />
     </View>
   );

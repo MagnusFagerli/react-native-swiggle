@@ -8,6 +8,11 @@ const Swiggle = ({
   onPress,
   enabledBackgroundColor,
   innerCircleEnabledColor,
+  hitSlop,
+  containerHeight,
+  containerWidth,
+  innerCircleHeight,
+  innerCircleWidth,
 }: SwiggleProps) => {
   const [isToggled, setIsToggled] = useState(!isActive);
   const toggleAnimation = useRef(new Animated.Value(isActive ? 0 : 1)).current;
@@ -32,10 +37,12 @@ const Swiggle = ({
   }, [isActive]);
 
   return (
-    <Pressable onPress={onPress} hitSlop={20}>
+    <Pressable onPress={onPress} hitSlop={hitSlop ?? 20}>
       <View
         style={[
           styles.container,
+          containerHeight ? { height: containerHeight } : { height: 25 },
+          containerWidth ? { width: containerWidth } : { width: 50 },
           isToggled ? styles.containerEnabled : styles.containerDisabled,
           isToggled && enabledBackgroundColor
             ? { backgroundColor: enabledBackgroundColor }
@@ -45,6 +52,8 @@ const Swiggle = ({
         <Animated.View
           style={[
             styles.innerCircle,
+            innerCircleHeight ? { height: innerCircleHeight } : { height: 16 },
+            innerCircleWidth ? { width: innerCircleWidth } : { width: 16 },
             innerCircleEnabledColor
               ? { backgroundColor: innerCircleEnabledColor }
               : null,

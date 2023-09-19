@@ -5,12 +5,12 @@ import { Swiggle } from 'react-native-swiggle';
 export default function App() {
   const [exampleValue, setExampleValue] = useState(true);
 
-  const handleToggle = () => {
+  const handleSwiggle = () => {
     setExampleValue((prevValue) => !prevValue);
   };
   return (
     <View style={styles.container}>
-      <Swiggle isActive={exampleValue} onPress={handleToggle} />
+      <Swiggle isActive={exampleValue} onPress={handleSwiggle} />
     </View>
   );
 }
@@ -20,10 +20,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
   },
 });
