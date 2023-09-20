@@ -6,13 +6,16 @@ import styles from './Swiggle.styles';
 const Swiggle = ({
   isActive,
   onPress,
-  enabledBackgroundColor,
-  disabledBackgroundColor,
-  innerCircleEnabledColor,
-  innerCircleDisabledColor,
+  enabledBackgroundColor = undefined,
+  disabledBackgroundColor = undefined,
+  innerCircleEnabledColor = undefined,
+  innerCircleDisabledColor = undefined,
 }: SwiggleProps) => {
   const [isToggled, setIsToggled] = useState(!isActive);
   const toggleAnimation = useRef(new Animated.Value(isActive ? 0 : 1)).current;
+  const innerCircleColor = isToggled
+    ? innerCircleEnabledColor || styles.innerCircleEnabled.backgroundColor
+    : innerCircleDisabledColor || styles.innerCircleDisabled.backgroundColor;
   const innerCircleTranslateX = toggleAnimation.interpolate({
     inputRange: [0, 1],
     outputRange: [0, 23],
@@ -54,16 +57,7 @@ const Swiggle = ({
         <Animated.View
           style={[
             styles.innerCircle,
-            innerCircleEnabledColor
-              ? { backgroundColor: innerCircleEnabledColor }
-              : !innerCircleEnabledColor && isToggled
-              ? { backgroundColor: styles.innerCircleEnabled.backgroundColor }
-              : null,
-            innerCircleDisabledColor
-              ? { backgroundColor: innerCircleEnabledColor }
-              : !innerCircleEnabledColor && !isToggled
-              ? { backgroundColor: styles.innerCircleDisabled.backgroundColor }
-              : null,
+            { backgroundColor: innerCircleColor },
             { transform: [{ translateX: innerCircleTranslateX }] },
           ]}
         />
