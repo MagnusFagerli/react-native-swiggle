@@ -55,7 +55,7 @@ export default function App() {
         isActive={exampleValue}
         onPress={handleSwiggle}
         enabledBackgroundColor="blue"
-        disabkedBackgroundColor="red"
+        disabledBackgroundColor="red"
         innerCircleEnabledColor="white"
         innerCircleDisabledColor="violet"
       />
