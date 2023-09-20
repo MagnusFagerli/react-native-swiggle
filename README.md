@@ -33,7 +33,11 @@ export default function App() {
 
 ## Usage with optional props
 
-Default colors are iOS green for enabled background color, and white for innerCircle color.
+Default colors:
+Background disabled: gray,
+Background enabled: green,
+Inner circle disabled: black,
+Inner circle enabled: white
 
 ```js
 import Swiggle from 'react-native-swiggle';
@@ -51,11 +55,9 @@ export default function App() {
         isActive={exampleValue}
         onPress={handleSwiggle}
         enabledBackgroundColor="blue"
+        disabkedBackgroundColor="red"
         innerCircleEnabledColor="white"
-        containerHeight={50}
-        containerWidth={100}
-        innerCircleHeight={40}
-        innerCircleWidth={40}
+        innerCircleDisabledColor="violet"
       />
     </View>
   );
