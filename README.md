@@ -1,5 +1,7 @@
 # react-native-swiggle
 
+![Swiggles](Swiggle.png)
+
 What is the correct term? Toggle or Switch? I don't know. Who knows?
 That's why I created this component. It's a toggle, it's a switch, it's a Swiggle.
 
